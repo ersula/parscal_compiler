@@ -1,0 +1,147 @@
+; ModuleID = "main"
+target triple = "unknown-unknown-unknown"
+target datalayout = ""
+
+define void @"writeint"(i32 %"x") 
+{
+entry:
+  %"f" = inttoptr i64 4489326432 to void (i32)*
+  call void %"f"(i32 %"x")
+  ret void
+}
+
+define void @"writechar"(i8 %"x") 
+{
+entry:
+  %"f" = inttoptr i64 4489326384 to void (i8)*
+  call void %"f"(i8 %"x")
+  ret void
+}
+
+define void @"writefloat"(float %"x") 
+{
+entry:
+  %"f" = inttoptr i64 4489326336 to void (float)*
+  call void %"f"(float %"x")
+  ret void
+}
+
+define i32 @"readint"(i32 %"x") 
+{
+entry:
+  %"f" = inttoptr i64 4489326288 to i32 (i32)*
+  %".3" = call i32 %"f"(i32 %"x")
+  ret i32 %".3"
+}
+
+define i8 @"readchar"(i8 %"x") 
+{
+entry:
+  %"f" = inttoptr i64 4489326240 to i8 (i8)*
+  %".3" = call i8 %"f"(i8 %"x")
+  ret i8 %".3"
+}
+
+define float @"readfloat"(float %"x") 
+{
+entry:
+  %"f" = inttoptr i64 4489326192 to float (float)*
+  %".3" = call float %"f"(float %"x")
+  ret float %".3"
+}
+
+define i8 @"chr"(i32 %"x") 
+{
+entry:
+  %"f" = inttoptr i64 4489326144 to i8 (i32)*
+  %".3" = call i8 %"f"(i32 %"x")
+  ret i8 %".3"
+}
+
+define i1 @"odd"(i32 %"x") 
+{
+entry:
+  %".3" = srem i32 %"x", 2
+  %".4" = icmp eq i32 %".3", 1
+  ret i1 %".4"
+}
+
+define i1 @"ord"(i32 %"x") 
+{
+entry:
+  %".3" = srem i32 %"x", 2
+  %".4" = icmp eq i32 %".3", 0
+  ret i1 %".4"
+}
+
+define i32 @"abs_int"(i32 %"x") 
+{
+entry:
+  %"f" = inttoptr i64 4489326096 to i32 (i32)*
+  %".3" = call i32 %"f"(i32 %"x")
+  ret i32 %".3"
+}
+
+define float @"abs_float"(float %"x") 
+{
+entry:
+  %"f" = inttoptr i64 4489326048 to float (float)*
+  %".3" = call float %"f"(float %"x")
+  ret float %".3"
+}
+
+define float @"isqrt"(i32 %"x") 
+{
+entry:
+  %"f" = inttoptr i64 4489326000 to float (i32)*
+  %".3" = call float %"f"(i32 %"x")
+  ret float %".3"
+}
+
+define float @"fsqrt"(float %"x") 
+{
+entry:
+  %"f" = inttoptr i64 4489325952 to float (float)*
+  %".3" = call float %"f"(float %"x")
+  ret float %".3"
+}
+
+define i32 @"succ"(i32 %"x") 
+{
+entry:
+  %".3" = add i32 %"x", 1
+  ret i32 %".3"
+}
+
+define i32 @"pred"(i32 %"x") 
+{
+entry:
+  %".3" = sub i32 %"x", 1
+  ret i32 %".3"
+}
+
+define i32 @"isqr"(i32 %"x") 
+{
+entry:
+  %".3" = mul i32 %"x", %"x"
+  ret i32 %".3"
+}
+
+define float @"fsqr"(float %"x") 
+{
+entry:
+  %".3" = fmul float %"x", %"x"
+  ret float %".3"
+}
+
+define i32 @"main"() 
+{
+main:
+  %"integer_add" = add i32 1, 2
+  store i32 %"integer_add", i32* @"l0"
+  ret i32 1
+}
+
+@"x0" = global i8 0
+@"i0" = global i8 0
+@"l0" = global i32 0

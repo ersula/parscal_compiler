@@ -1,0 +1,8 @@
+program hello;
+Const a =2;b = true;c = 2;
+begin
+	if b then
+		writeln(a);
+	a := 3;
+end
+.

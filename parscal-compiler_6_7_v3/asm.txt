@@ -1,0 +1,212 @@
+	.section	__TEXT,__text,regular,pure_instructions
+	.macosx_version_min 10, 14
+	.globl	_writeint
+	.p2align	4, 0x90
+_writeint:
+	.cfi_startproc
+	pushq	%rax
+	.cfi_def_cfa_offset 16
+	movabsq	$4489326432, %rax
+	callq	*%rax
+	popq	%rax
+	retq
+	.cfi_endproc
+
+	.globl	_writechar
+	.p2align	4, 0x90
+_writechar:
+	.cfi_startproc
+	pushq	%rax
+	.cfi_def_cfa_offset 16
+	movabsq	$4489326384, %rax
+	callq	*%rax
+	popq	%rax
+	retq
+	.cfi_endproc
+
+	.globl	_writefloat
+	.p2align	4, 0x90
+_writefloat:
+	.cfi_startproc
+	pushq	%rax
+	.cfi_def_cfa_offset 16
+	movabsq	$4489326336, %rax
+	callq	*%rax
+	popq	%rax
+	retq
+	.cfi_endproc
+
+	.globl	_readint
+	.p2align	4, 0x90
+_readint:
+	.cfi_startproc
+	pushq	%rax
+	.cfi_def_cfa_offset 16
+	movabsq	$4489326288, %rax
+	callq	*%rax
+	popq	%rcx
+	retq
+	.cfi_endproc
+
+	.globl	_readchar
+	.p2align	4, 0x90
+_readchar:
+	.cfi_startproc
+	pushq	%rax
+	.cfi_def_cfa_offset 16
+	movabsq	$4489326240, %rax
+	callq	*%rax
+	popq	%rcx
+	retq
+	.cfi_endproc
+
+	.globl	_readfloat
+	.p2align	4, 0x90
+_readfloat:
+	.cfi_startproc
+	pushq	%rax
+	.cfi_def_cfa_offset 16
+	movabsq	$4489326192, %rax
+	callq	*%rax
+	popq	%rax
+	retq
+	.cfi_endproc
+
+	.globl	_chr
+	.p2align	4, 0x90
+_chr:
+	.cfi_startproc
+	pushq	%rax
+	.cfi_def_cfa_offset 16
+	movabsq	$4489326144, %rax
+	callq	*%rax
+	popq	%rcx
+	retq
+	.cfi_endproc
+
+	.globl	_odd
+	.p2align	4, 0x90
+_odd:
+	.cfi_startproc
+	movl	%edi, %eax
+	shrl	$31, %eax
+	addl	%edi, %eax
+	andl	$-2, %eax
+	subl	%eax, %edi
+	cmpl	$1, %edi
+	sete	%al
+	retq
+	.cfi_endproc
+
+	.globl	_ord
+	.p2align	4, 0x90
+_ord:
+	.cfi_startproc
+	movl	%edi, %eax
+	shrl	$31, %eax
+	addl	%edi, %eax
+	andl	$-2, %eax
+	cmpl	%eax, %edi
+	sete	%al
+	retq
+	.cfi_endproc
+
+	.globl	_abs_int
+	.p2align	4, 0x90
+_abs_int:
+	.cfi_startproc
+	pushq	%rax
+	.cfi_def_cfa_offset 16
+	movabsq	$4489326096, %rax
+	callq	*%rax
+	popq	%rcx
+	retq
+	.cfi_endproc
+
+	.globl	_abs_float
+	.p2align	4, 0x90
+_abs_float:
+	.cfi_startproc
+	pushq	%rax
+	.cfi_def_cfa_offset 16
+	movabsq	$4489326048, %rax
+	callq	*%rax
+	popq	%rax
+	retq
+	.cfi_endproc
+
+	.globl	_isqrt
+	.p2align	4, 0x90
+_isqrt:
+	.cfi_startproc
+	pushq	%rax
+	.cfi_def_cfa_offset 16
+	movabsq	$4489326000, %rax
+	callq	*%rax
+	popq	%rax
+	retq
+	.cfi_endproc
+
+	.globl	_fsqrt
+	.p2align	4, 0x90
+_fsqrt:
+	.cfi_startproc
+	pushq	%rax
+	.cfi_def_cfa_offset 16
+	movabsq	$4489325952, %rax
+	callq	*%rax
+	popq	%rax
+	retq
+	.cfi_endproc
+
+	.globl	_succ
+	.p2align	4, 0x90
+_succ:
+	.cfi_startproc
+	leal	1(%rdi), %eax
+	retq
+	.cfi_endproc
+
+	.globl	_pred
+	.p2align	4, 0x90
+_pred:
+	.cfi_startproc
+	leal	-1(%rdi), %eax
+	retq
+	.cfi_endproc
+
+	.globl	_isqr
+	.p2align	4, 0x90
+_isqr:
+	.cfi_startproc
+	movl	%edi, %eax
+	imull	%edi, %eax
+	retq
+	.cfi_endproc
+
+	.globl	_fsqr
+	.p2align	4, 0x90
+_fsqr:
+	.cfi_startproc
+	mulss	%xmm0, %xmm0
+	retq
+	.cfi_endproc
+
+	.globl	_main
+	.p2align	4, 0x90
+_main:
+	.cfi_startproc
+	movabsq	$_l0, %rax
+	movl	$3, (%rax)
+	movl	$1, %eax
+	retq
+	.cfi_endproc
+
+	.globl	_x0
+.zerofill __DATA,__common,_x0,1,0
+	.globl	_i0
+.zerofill __DATA,__common,_i0,1,0
+	.globl	_l0
+.zerofill __DATA,__common,_l0,4,2
+
+.subsections_via_symbols
